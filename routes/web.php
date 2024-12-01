@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\Movie\MovieController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MovieController::class, 'showAction'])->name('movies.show');
 
 Route::middleware([
     'auth:sanctum',
